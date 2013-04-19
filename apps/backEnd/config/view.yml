@@ -1,0 +1,22 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+    charset:      utf-8
+
+  metas:
+    title:        Sistema ALPZA
+    description:  symfony project
+    keywords:     symfony, project
+    language:     es
+    robots:       index, follow
+    viewport:     width=device-width, initial-scale=1.0
+
+  stylesheets:    [bootstrap.min.css,bootstrap.css,bootstrap-responsive.css,nav,styles]
+
+  javascripts:    [home/modernizr,bootstrap.min.js,bootstrap-typeahead.js,bootstrap-carousel.js,bootstrap-collapse.js,bootstrap-button.js,bootstrap-popover.js,bootstrap-tooltip.js,bootstrap-tab.js,bootstrap-scrollspy.js,bootstrap-dropdown.js,bootstrap-modal.js,bootstrap-alert.js,bootstrap-transition.js,tiny_mce/tiny_mce.js]
+
+  has_layout:     true
+  layout:         layoutBootStrap

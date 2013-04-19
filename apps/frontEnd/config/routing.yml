@@ -1,0 +1,37 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+#Reglas WEB
+alpzaHome:
+  url:   /
+  param: { module: home, action: home }
+
+alpzaSlider:
+  url:   /slider/central
+  param: { module: home, action: slidercentral }
+
+#Reglas Page
+alpzaVisionComite:
+  url:   /comite/:id/:nombre/
+  param: { module: page, action: comite }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+  
+sf_guard_signin_custom:
+  url:   /login/custom
+  param: { module: sfGuardAuth, action: singincustom }
+ 
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+ 
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }

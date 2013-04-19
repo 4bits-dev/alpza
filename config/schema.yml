@@ -1,0 +1,372 @@
+propel:
+  alpza_miembro:
+    id_alpza_miembro:                                                       { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro_tipo:                                                  { type: integer, required: true }
+    nombre:                                                                 { type: varchar(45), required: true }
+    estado:                                                                 { type: integer, required: true, default: 1 }
+    fecha_ingreso:                                                          { type: date, required: true }
+    fecha_edicion:                                                          { type: date, required: true }
+    fecha_publicacion:                                                      { type: date, required: true }
+  alpza_junta:
+    id_alpza_junta:                                                         { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    presidente:                                                             { type: varchar(100) }
+    vicepresidente:                                                         { type: varchar(100) }
+    secretario:                                                             { type: varchar(100) }
+    tesorero:                                                               { type: varchar(100) }
+    fiscal:                                                                 { type: varchar(100) }
+    director_ejecutivo:                                                     { type: varchar(100) }
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_junta_alpza_miembro1:                                        [ id_alpza_miembro ]
+  alpza_comite:
+    id_alpza_comite:                                                        { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    objetivo:                                                               longvarchar
+    informacion:                                                            longvarchar
+    email:                                                                  { type: varchar(100) }
+    coordinador:                                                            { type: varchar(100) }
+    email_coordinador:                                                      { type: varchar(100) }
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_comite_alpza_miembro1:                                       [ id_alpza_miembro ]
+  alpza_evento:
+    id_alpza_evento:                                                        { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    extracto:                                                               { type: varchar(254) }
+    evento:                                                                 longvarchar
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_evento_alpza_miembro1:                                       [ alpza_miembro_id_alpza_miembro ]
+  alpza_noticia:
+    id_alpza_noticia:                                                       { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    extracto:                                                               { type: varchar(254) }
+    noticia:                                                                longvarchar
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_noticia_alpza_miembro1:                                      [ alpza_miembro_id_alpza_miembro ]
+  alpza_publicacion:
+    id_alpza_publicacion:                                                   { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    id_alpza_publicacion_tipo:                                              { type: integer, foreignTable: alpza_publicacion_tipo, foreignReference: id_alpza_publicacion_tipo }
+    nombre:                                                                 { type: varchar(100) }
+    extracto:                                                               { type: varchar(254) }
+    proyecto:                                                               longvarchar
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_publicacion_alpza_publicacion_tipo1:                         [ id_alpza_publicacion_tipo ]
+      fk_alpza_publicacion_alpza_miembro1:                                  [ alpza_miembro_id_alpza_miembro ]
+  alpza_congreso:
+    id_alpza_congreso:                                                      { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    extracto:                                                               { type: varchar(254) }
+    congreso:                                                               longvarchar
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_congreso_alpza_miembro1:                                     [ id_alpza_miembro ]
+  alpza_beca:
+    id_alpza_beca:                                                          { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre:                                                                 { type: varchar(100) }
+    extracto:                                                               { type: varchar(254) }
+    beca:                                                                   longvarchar
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_beca_alpza_miembro1:                                         [ alpza_miembro_id_alpza_miembro ]
+  alpza_informacion:
+    id_alpza_informacion:                                                   { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    aliado:                                                                 longvarchar
+    boletin:                                                                { type: varchar(100) }
+    twitter:                                                                { type: varchar(100) }
+    facebook:                                                               { type: varchar(100) }
+    rss:                                                                    { type: varchar(100) }
+    email:                                                                  { type: varchar(100) }
+    descripcion:                                                            longvarchar
+    telefono:                                                               { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    fax:                                                                    { type: varchar(100) }
+    estado:                                                                 { type: integer, default: 1 }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_informacion_alpza_miembro1:                                  [ alpza_miembro_id_alpza_miembro ]
+  alpza_banner:
+    id_alpza_banner:                                                        { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_banner_tipo:                                                   { type: integer, required: true, foreignTable: alpza_banner_tipo, foreignReference: id_alpza_banner_tipo }
+    path_contenido:                                                         { type: varchar(200) }
+    nombre:                                                                 { type: varchar(100) }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    estado:                                                                 { type: integer, default: 1 }
+    url_tracking:                                                           { type: varchar(200) }
+    url_destino:                                                            { type: varchar(200) }
+    _indexes:
+      fk_alpza_banner_alpza_banner_tipo1:                                   [ id_alpza_banner_tipo ]
+  alpza_banner_tipo:
+    id_alpza_banner_tipo:                                                   { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    nombre:                                                                 { type: varchar(100) }
+  alpza_publicacion_tipo:
+    id_alpza_publicacion_tipo:                                              { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    nombre:                                                                 { type: varchar(100) }
+  alpza_miembro_asignado:
+    id_sf_guard_user:                                                       { type: integer, required: true, foreignTable: sf_guard_user, foreignReference: id }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    _indexes:
+      fk_alpza_miembro_asignado_alpza_usuario1:                             [ id_sf_guard_user ]
+      fk_alpza_miembro_asignado_alpza_miembro1:                             [ id_alpza_miembro ]
+  alpza_miembro_finanzas:
+    id_alpza_miembro_finanzas:                                              { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    cuenta:                                                                 { type: varchar(100) }
+    institucion:                                                            { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    email:                                                                  { type: varchar(100) }
+    duracion:                                                               { type: varchar(100) }
+    fecha_ingreso:                                                          date
+    fecha_edicion:                                                          date
+    fecha_publicacion:                                                      date
+    _indexes:
+      fk_alpza_miembro_finanzas_alpza_miembro1_idx:                         [ id_alpza_miembro ]
+  alpza_miembro_estado_financiero_historial:
+    id_alpza_miembro_finanzas_historial:                                    { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro_finanzas:                                              { type: integer, required: true, foreignTable: alpza_miembro_finanzas, foreignReference: id_alpza_miembro_finanzas }
+    _indexes:
+      fk_alpza_miembro_estado_financiero_historial_alpza_miembro_fi1:       [ id_alpza_miembro_finanzas ]
+  alpza_miembro_coleccion:
+    id_alpza_miembro_coleccion:                                             { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    id_alpza_miembro:                                                       { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    numero_especies:                                                        { type: varchar(45) }
+    porcentaje_especies_nativas:                                            { type: varchar(45) }
+    especies_amenazadas_iucn:                                               { type: varchar(45) }
+    numero_ejemplares:                                                      { type: varchar(45) }
+    _indexes:
+      fk_alpza_miembro_coleccion_alpza_miembro1:                            [ id_alpza_miembro ]
+  alpza_miembro_profesional:
+    id_alpza_miembro_profesional:                                           { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre_formal:                                                          { type: varchar(100) }
+    sigla:                                                                  { type: varchar(45) }
+    numero_identificacion:                                                  date
+    ano_ingreso_alpza:                                                      date
+    nombre:                                                                 { type: varchar(100) }
+    apellido:                                                               { type: varchar(100) }
+    profesion:                                                              { type: varchar(100) }
+    trabajo:                                                                { type: varchar(100) }
+    cargo:                                                                  { type: varchar(100) }
+    otra_asociacion:                                                        { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    codigo_postal:                                                          { type: varchar(100) }
+    pais:                                                                   { type: varchar(100) }
+    telefono_cod_ciudad:                                                    { type: varchar(45) }
+    telefono_cod_pais:                                                      { type: varchar(45) }
+    telefono:                                                               { type: varchar(45) }
+    celular:                                                                { type: varchar(45) }
+    fax:                                                                    { type: varchar(45) }
+    email:                                                                  { type: varchar(45) }
+    sitio_web:                                                              { type: varchar(254) }
+    intereses_principales:                                                  longvarchar
+    area_tematica_interes:                                                  longvarchar
+    area_experiencia:                                                       longvarchar
+    proyecto:                                                               longvarchar
+    publicacion:                                                            longvarchar
+    _indexes:
+      fk_alpza_miembro_profesional_alpza_miembro1:                          [ alpza_miembro_id_alpza_miembro ]
+  alpza_miembro_asociados:
+    id_alpza_miembro_asociados:                                             { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre_formal:                                                          { type: varchar(100) }
+    sigla:                                                                  { type: varchar(45) }
+    tipo_institucion:                                                       { type: varchar(100) }
+    numero_identificacion:                                                  { type: varchar(100) }
+    ano_fundacion:                                                          date
+    ano_ingreso_alpza:                                                      date
+    director_nombre:                                                        { type: varchar(100) }
+    director_email:                                                         { type: varchar(100) }
+    delegado_nombre:                                                        { type: varchar(100) }
+    delegado_apellido:                                                      { type: varchar(100) }
+    delegado_cargo:                                                         { type: varchar(100) }
+    delegado_profesion:                                                     { type: varchar(100) }
+    delegado_email:                                                         { type: varchar(100) }
+    logo:                                                                   { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    codigo_postal:                                                          { type: varchar(100) }
+    pais:                                                                   { type: varchar(100) }
+    telefono_cod_ciudad:                                                    { type: varchar(45) }
+    telefono_cod_pais:                                                      { type: varchar(45) }
+    telefono:                                                               { type: varchar(45) }
+    celular:                                                                { type: varchar(45) }
+    email:                                                                  { type: varchar(45) }
+    fax:                                                                    { type: varchar(45) }
+    sitio_web:                                                              { type: varchar(254) }
+    descripcion:                                                            longvarchar
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    objetivos:                                                              longvarchar
+    acreditacion_aza:                                                       integer
+    acreditacion_iso14001:                                                  integer
+    acreditacion_iso9001:                                                   integer
+    acreditacion_otra:                                                      integer
+    asociacion_waza:                                                        integer
+    asociacion_aza:                                                         integer
+    asociacion_eaza:                                                        integer
+    asociacion_ize:                                                         integer
+    asociacion_amaczoa:                                                     integer
+    asociacion_isis:                                                        integer
+    asociacion_otra:                                                        integer
+    marca_anillo:                                                           integer
+    marca_banda:                                                            integer
+    marca_caliente:                                                         integer
+    marca_fria:                                                             integer
+    marca_microchip:                                                        integer
+    marca_natura:                                                           integer
+    marca_piquete:                                                          integer
+    marca_raya:                                                             integer
+    marca_tatuaje:                                                          integer
+    marca_otra:                                                             integer
+    visitas_anuales:                                                        { type: varchar(45) }
+    propietario:                                                            { type: varchar(45) }
+    administrador:                                                          { type: varchar(45) }
+    lucro:                                                                  integer
+    ofrece_asesoria:                                                        integer
+    personal_permanente:                                                    { type: varchar(45) }
+    personal_temporal:                                                      { type: varchar(45) }
+    horario_atencion:                                                       longvarchar
+    descripcion:                                                            longvarchar
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    objetivo:                                                               longvarchar
+    senalizacion_porcentaje:                                                { type: varchar(100) }
+    zoologico_contacto:                                                     { type: varchar(100) }
+    boletin:                                                                { type: varchar(100) }
+    programa_enriquecimiento:                                               { type: varchar(100) }
+    programa_entrenamiento:                                                 { type: varchar(100) }
+    programa_manejo_ambiental:                                              { type: varchar(100) }
+    programa_medicina_preventiva:                                           { type: varchar(100) }
+    consulta_externa_veterinaria:                                           { type: varchar(100) }
+    show:                                                                   { type: varchar(100) }
+    documento_estrategico:                                                  { type: varchar(100) }
+    proyecto_conservacion_exsitu:                                           { type: varchar(100) }
+    proyecto_conservacion_insitu:                                           { type: varchar(100) }
+    asociacion_lista_asociaciones:                                          { type: varchar(100) }
+    asociacion_lista_instituciones:                                         { type: varchar(100) }
+    asociacion_apoyo_desde_alpza:                                           { type: varchar(100) }
+    asociacion_apoyo_hacia_alpza:                                           { type: varchar(100) }
+    asociacion_estatutos:                                                   { type: varchar(100) }
+    asociacion_organigrama:                                                 { type: varchar(100) }
+    asociacion_panorama_pais:                                               { type: varchar(100) }
+    _indexes:
+      fk_alpza_miembro_asociados_alpza_miembro1:                            [ alpza_miembro_id_alpza_miembro ]
+  alpza_miembro_regional:
+    id_alpza_miembro_regional:                                              { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre_formal:                                                          { type: varchar(100) }
+    sigla:                                                                  { type: varchar(100) }
+    director_nombre:                                                        { type: varchar(100) }
+    director_email:                                                         { type: varchar(100) }
+    numero_identificacion:                                                  { type: varchar(100) }
+    ano_fundacion:                                                          date
+    ano_ingreso_alpza:                                                      date
+    delegado_nombre:                                                        { type: varchar(100) }
+    delegado_apellido:                                                      { type: varchar(100) }
+    delegado_profesion:                                                     { type: varchar(100) }
+    delegado_cargo:                                                         { type: varchar(100) }
+    delegado_email:                                                         { type: varchar(100) }
+    logo:                                                                   { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    telefono_cod_ciudad:                                                    { type: varchar(45) }
+    telefono_cod_pais:                                                      { type: varchar(45) }
+    telefono:                                                               { type: varchar(45) }
+    fax:                                                                    { type: varchar(45) }
+    celular:                                                                { type: varchar(45) }
+    email:                                                                  { type: varchar(100) }
+    sitio_web:                                                              { type: varchar(254) }
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    descripcion:                                                            longvarchar
+    objetivo:                                                               longvarchar
+    proyectos:                                                              longvarchar
+    pais:                                                                   { type: varchar(45) }
+    _indexes:
+      fk_alpza_miembro_regional_alpza_miembro1:                             [ alpza_miembro_id_alpza_miembro ]
+  alpza_miembro_nacionales:
+    id_alpza_miembro_nacionales:                                            { type: integer, required: true, primaryKey: true, autoIncrement: true }
+    alpza_miembro_id_alpza_miembro:                                         { type: integer, required: true, foreignTable: alpza_miembro, foreignReference: id_alpza_miembro }
+    nombre_formal:                                                          { type: varchar(100) }
+    sigla:                                                                  { type: varchar(100) }
+    numero_identificacion:                                                  { type: varchar(100) }
+    ano_fundacion:                                                          date
+    ano_ingreso_alpza:                                                      date
+    director_nombre:                                                        { type: varchar(100) }
+    director_email:                                                         { type: varchar(100) }
+    personal_permanente:                                                    { type: varchar(100) }
+    personal_temporal:                                                      { type: varchar(100) }
+    delegado_nombre:                                                        { type: varchar(100) }
+    delegado_apellido:                                                      { type: varchar(100) }
+    delegado_profesion:                                                     { type: varchar(100) }
+    delegado_cargo:                                                         { type: varchar(100) }
+    delegado_email:                                                         { type: varchar(100) }
+    logo:                                                                   { type: varchar(100) }
+    direccion:                                                              { type: varchar(100) }
+    codigo_postal:                                                          { type: varchar(100) }
+    pais:                                                                   { type: varchar(100) }
+    telefono_cod_ciudad:                                                    { type: varchar(45) }
+    telefono_cod_pais:                                                      { type: varchar(45) }
+    telefono:                                                               { type: varchar(45) }
+    fax:                                                                    { type: varchar(45) }
+    celular:                                                                { type: varchar(45) }
+    email:                                                                  { type: varchar(100) }
+    sitio_web:                                                              { type: varchar(254) }
+    naturaleza_juridica_publica:                                            integer
+    naturaleza_juridica_privada:                                            integer
+    naturaleza_juridica_mixta:                                              integer
+    propietario:                                                            { type: varchar(45) }
+    lucro:                                                                  integer
+    numero_instituciones_miembro:                                           { type: varchar(45) }
+    porcentaje_covertura_nacional:                                          { type: varchar(45) }
+    lista_instituciones_miembro:                                            longvarchar
+    estatutos:                                                              { type: varchar(100) }
+    organigrama:                                                            { type: varchar(100) }
+    otra_asociacion:                                                        longvarchar
+    descripcion:                                                            longvarchar
+    mision:                                                                 longvarchar
+    vision:                                                                 longvarchar
+    objetivo:                                                               longvarchar
+    panorama_general:                                                       longvarchar
+    proyectos:                                                              longvarchar
+    area_trabajo:                                                           longvarchar
+    considera_apoyo_alpza:                                                  longvarchar
+    _indexes:
+      fk_alpza_miembro_nacionales_alpza_miembro1:                           [ alpza_miembro_id_alpza_miembro ]

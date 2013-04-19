@@ -1,0 +1,38 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+homeSuccess:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        ALPZA
+    description:  symfony project
+    keywords:     symfony, project
+    language:     es
+    robots:       index, follow
+
+  stylesheets:    [nav,styles]
+
+  javascripts:    [home/modernizr,home/slider-central]
+
+  has_layout:     true
+  layout:         layout
+
+slidercentralSuccess:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Asociacon de parques
+    description:  symfony project
+    keywords:     symfony, project
+    language:     es
+    robots:       index, follow
+
+  stylesheets:    [sliderCentral/default,sliderCentral/pascal,sliderCentral/orman,sliderCentral/nivo-slider,sliderCentral/style.css]
+
+  javascripts:    [sliderCentral/jquery.nivo.slider.pack.js,sliderCentral/sliderAccion]
+
+  has_layout:     true
+  layout:         sliderCentral

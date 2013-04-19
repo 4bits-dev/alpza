@@ -1,0 +1,13 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  backend:
+    routing: backend_home
+    routingError: backend_error
+    routinghomepage: alpzaHome
+    
+# You need to set the basePath of the ckeditor in an app.yml.
+  ckeditor:
+    basePath:         'path/to/ckeditor/'

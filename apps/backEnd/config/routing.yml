@@ -1,0 +1,139 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# Reglas WEB
+
+backend_home:
+ url:  /sistema
+ param:  {module: sistema, action: sistemabootstrap }
+  
+backend_home_antiguo:
+  url:  /sistema-antiguo
+  param:  {module: sistema, action: sistema }
+
+backend_error:
+  url:  /error
+  param:  {module: sistema, action: error }
+
+# backEnd Gestión Banner
+backend_banners:
+  url:  /banners
+  param:  {module: banner, action: index }
+  
+backend_banners_tipo:
+  url:  /banners-tipo
+  param:  {module: bannerTipo, action: index }
+  
+# backEnd Gestión de Usuarios
+backend_usuarios:
+  url:  /usuarios
+  param:  {module: usuario, action: index }
+
+backend_usuarios_perfil:
+  url:  /usuarios_perfil
+  param:  {module: usuarioPerfil, action: index }
+
+backend_usuarios_grupos:
+  url:  /usuario-grupos
+  param:  {module: usuarioGrupos, action: index }
+
+backend_usuarios_permisos:
+  url:  /usuario-permisos
+  param:  {module: usuarioPermisos, action: index }
+
+backend_usuarios_asociado_grupo:
+  url:  /usuario-asociado-grupo
+  param:  {module: usuarioAsociadoGrupo, action: index }
+  
+# backEnd Gestión de Miembros
+backend_miembro_asociado_usuario:
+  url:  /miembro-asociado-usuario
+  param:  {module: miembroAsociadoUsuario, action: index }
+  
+backend_miembro:
+  url:  /miembro
+  param:  {module: miembro, action: index }
+  
+backend_miembro_asociados:
+  url:  /backend_miembro_asociados
+  param:  {module: miembroAsociados, action: index }
+  
+backend_miembro_profesional:
+  url:  /backend_miembro_profesional
+  param:  {module: miembroProfesional, action: index }
+  
+backend_miembro_nacionales:
+  url:  /backend_miembro_nacionales
+  param:  {module: miembroNacionales, action: index }
+  
+backend_miembro_regionales:
+  url:  /backend_miembro_regionales
+  param:  {module: miembroRegional, action: index }
+  
+backend_miembro_regionales:
+  url:  /backend_miembro_regionales
+  param:  {module: miembroRegional, action: index }
+  
+backend_miembro_informacion_coleccion:
+  url:  /miembro-informacion-coleccion
+  param:  {module: miembroInformacionColeccion, action: index }
+
+backend_miembro_informacion_financiera:
+  url:  /miembro-informacion-financiera
+  param:  {module: miembroInformacionFinanciera, action: index }
+  
+# backEnd Gestión de Alpza
+backend_alpza_informacion:
+  url:  /alpza_informacion
+  param:  {module: alpzaInformacion, action: index }
+  
+backend_alpza_congreso:
+  url:  /alpza_congreso
+  param:  {module: alpzaCongreso, action: index }
+  
+backend_alpza_junta:
+  url:  /alpza_junta
+  param:  {module: alpzaJunta, action: index }
+
+backend_alpza_comite:
+  url:  /alpza_comite
+  param:  {module: alpzaComite, action: index }
+
+# backEnd Contenidos
+backend_alpza_noticia:
+  url:  /alpza_noticia
+  param:  {module: alpzaNoticia, action: index }
+
+backend_alpza_evento:
+  url:  /alpza_evento
+  param:  {module: alpzaEvento, action: index }
+  
+backend_alpza_beca:
+  url:  /alpza_beca
+  param:  {module: alpzaBeca, action: index }
+  
+backend_alpza_publicacion:
+  url:  /alpza_publicacion
+  param:  {module: alpzaPublicacion, action: index }
+
+# Reglas de rutas para sfGuard
+autentificacion_login:
+  url:   /ingreso/sistema
+  param: { module: sfGuardAuth, action: singincustom }
+ 
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+ 
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

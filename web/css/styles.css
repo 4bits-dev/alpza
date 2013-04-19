@@ -1,0 +1,256 @@
+/*
+     TEMAS INFORMATICOS
+     Autor: Rosmel Aguilar Robles
+	 E-mail: aguilar097@gmail.com
+	 http://rosmel-aguilar.blogspot.com
+*/
+body {
+	margin: 0px;
+}
+
+#header {
+	width: auto;
+	height: 30px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	font-size: 11px;
+	z-index: 9999;
+}
+
+#master {
+	width: 1039px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+
+#logo {
+	height: 159px;
+	width: 1039px;
+	position: relative;
+	float: left;
+	background-image: url(../images/home/logo.jpg);
+	background-repeat: no-repeat;
+}
+
+#login {
+	width: 229px;
+	padding-top: 20px;
+	height: 191px;
+	position: absolute;
+	right: 0px;
+	top: 210px;
+	background-image: url(../images/home/login.jpg);
+	z-index: -200;
+	font-size: 11px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	color: #999;
+}
+
+#banner {
+	width: 229px;
+	height: 72px;
+	position: absolute;
+	right: 0px;
+	top: 411px;
+	background-image: url(../images/home/banner.jpg);
+	background-repeat: no-repeat;
+}
+
+#logos {
+	width: 229px;
+	height: 72px;
+	position: absolute;
+	right: 0px;
+	top: 483px;
+	background-image: url(../images/home/banner.jpg);
+	background-repeat: no-repeat;
+}
+
+#img {
+	width: 820px;
+	height: 365px;
+	position: absolute;
+	left: -10px;
+	top: 194px;
+	z-index: -200;
+}
+
+#contenedor {
+	width: 820px;
+	height: auto;
+	position: absolute;
+	left: -10px;
+	top: 194px;
+	z-index: -1;
+	font-family: "Tahoma", Geneva, sans-serif;
+}
+
+#title {
+	width: 800px;
+	height: auto;
+	position: relative;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 25px;
+	color: #959595;
+}
+
+#subtittle {
+	width: 800px;
+	height: auto;
+	position: relative;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 18px;
+	color: #666;
+	text-align: justify;
+}
+
+#texto {
+	width: 750px;
+	height: auto;
+	position: relative;
+	float: left;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-left: 20px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+
+#menu {
+	height: 25px;
+	z-index: 999;
+}
+
+#menu ul {
+	padding-left: 0px;
+	list-style: none;
+	z-index: 999;
+}
+
+#menu ul li {
+	display: inline-block;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 13px;
+	z-index: 999;
+}
+
+#menu ul li:hover {
+	text-shadow: 0px 0px 0px #000;
+	z-index: 999;
+}
+
+#menu ul li a {
+	display: block;
+	padding: 5px 0px;
+	width: 169px;
+	color: #fff;
+	text-align: center;
+	z-index: 999;
+}
+
+#menu a {
+	text-decoration: none
+}
+
+#menu ul li ul {
+	position: absolute;
+	display: none;
+	width: 169px;
+	padding-top: 5px;
+	text-align: center;
+	border-top: ;
+	z-index: 999;
+}
+
+#menu ul li ul li {
+	display: block;
+}
+
+#menu ul li ul a {
+	padding: 5px 0px;
+	width: 169px;
+	text-align: center;
+	font-weight: normal;
+	border-bottom: 1px solid white;
+	z-index: 999;
+}
+
+#menu ul li:hover ul {
+	display: block;
+}
+
+#menu,li ul {
+	
+}
+
+.default {
+	background: #0979cf;
+}
+
+#footer {
+	width: 1029px;
+	padding-left: 10px;
+	height: 39px;
+	background-color: #e2e1e1;
+	position: absolute;
+	top: 568px;
+	left: 0px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 10px;
+	color: #666;
+}
+
+input {
+	width: 191px;
+	height: 36px;
+	background-image: url(../images/home/input.png);
+	padding-left: 10px;
+	padding-top: 3px;
+	border: 0px;
+	font-family: "Tahoma", Geneva, sans-serif;
+	font-size: 10px;
+	color: #9999;
+}
+
+ul,menu,dir {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 2px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 15px;
+	z-index: -200;
+}
+
+.fb {
+	position: absolute;
+	width: 32px;
+	height: 32x;
+	right: 10px;
+	top: 3px;
+}
+
+.tw {
+	position: absolute;
+	width: 32px;
+	height: 32x;
+	right: 52px;
+	top: 3px;
+}
+
+iframe {
+	z-index: 200;
+}
