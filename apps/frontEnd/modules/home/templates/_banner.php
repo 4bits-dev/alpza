@@ -1,2 +1,2 @@
-<div id="banner"></div>
-<div id="logos"></div>
+<!--<div id="banner"></div>
+<div id="logos"></div>-->
