@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [bootstrap.min.css,bootstrap-responsive.min.css,nav,styles]
 
-  javascripts:    [bootstrap.min.js,home/modernizr,home/slider-central]
+  javascripts:    [bootstrap.min.js,home/modernizr,home/slider-central,banner.js]
 
   has_layout:     true
   layout:         layout

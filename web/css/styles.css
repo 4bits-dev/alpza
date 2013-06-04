@@ -36,13 +36,14 @@ body {
 }
 
 #login {
-	width: 229px;
+	width: 220px;
 	padding-top: 20px;
-	height: 191px;
+	height: 217px;
 	position: absolute;
 	right: 0px;
 	top: 210px;
-	background-image: url(../images/home/login.jpg);
+	border:2px solid;
+    border-radius:10px;
 	z-index: -200;
 	font-size: 11px;
 	font-family: "Tahoma", Geneva, sans-serif;
@@ -50,13 +51,16 @@ body {
 }
 
 #banner {
-	width: 229px;
+	width: 220px;
 	height: 72px;
 	position: absolute;
 	right: 0px;
-	top: 411px;
-	background-image: url(../images/home/banner.jpg);
+	top: 460px;
+	border:2px solid;
+    border-radius:10px;
+	background-image: url(../images/home/banner_alpza.png);
 	background-repeat: no-repeat;
+	color: #999;
 }
 
 #logos {
@@ -213,7 +217,7 @@ body {
 }
 
 input {
-	width: 191px;
+	width: 180px;
 	height: 36px;
 	background-image: url(../images/home/input.png);
 	padding-left: 10px;

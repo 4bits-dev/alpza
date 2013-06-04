@@ -14,7 +14,7 @@ visionmisionSuccess:
 
   stylesheets:    [nav,styles]
 
-  javascripts:    [home/modernizr,home/slider-central]
+  javascripts:    [home/modernizr,home/slider-central,banner.js]
 
   has_layout:     true
   layout:         layout
@@ -32,7 +32,7 @@ juntaSuccess:
 
     stylesheets:    [nav,styles]
 
-    javascripts:    [home/modernizr,home/slider-central]
+    javascripts:    [home/modernizr,home/slider-central,banner.js]
 
     has_layout:     true
     layout:         layout

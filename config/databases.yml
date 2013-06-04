@@ -24,9 +24,9 @@ all:
     class:        sfPropelDatabase
     param:
       classname:  PropelPDO
-      dsn:        mysql:dbname=themypan_alpza;host=localhost
-      username:   themypan_alp
-      password:   ldeiQ1Mr~3&9
+      dsn:        mysql:dbname=alpza;host=localhost
+      username:   root
+      password:   1q2w3e4r5t
       encoding:   utf8
       persistent: true
       pooling:    true
