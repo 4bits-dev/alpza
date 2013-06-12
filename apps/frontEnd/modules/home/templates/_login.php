@@ -1,5 +1,5 @@
 <div id="login">
-	<form action="<?php echo url_for('@alpzaHome') ?>" method="post">
+	<form action="<?php echo url_for('@sf_guard_signin_custom') ?>" method="post">
 		<ul>
 		<?php echo $form['username']->renderRow() ?>
 		</ul>
