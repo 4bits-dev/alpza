@@ -37,5 +37,5 @@ if(count($contenido)>0){
 		<?php }?>
 	</tbody>
 	<?php }?>
-	<?php }?>
+	<?php }//Prod?>
 </table>

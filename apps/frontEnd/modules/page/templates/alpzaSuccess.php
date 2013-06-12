@@ -15,7 +15,7 @@
 	<?php include_component('home', 'banner') ?>
 	<!--BANNER-->
 	<!--FOOTER-->
-	<?php include_component('home', 'footer') ?>
+	<?php include_component('home', 'footer') //prod?>
 	<!--FOOTER-->
 	<div id="contenedor">
 	<?php include_component('page', 'contenido',array('contenido'=>$contenido))?>

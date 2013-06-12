@@ -6,7 +6,7 @@
 <?php include_component('home', 'login') ?> <!--LOGIN--> <!--BANNER--> <?php include_component('home', 'banner') ?>
 <!--BANNER--> <!--FOOTER--> <?php include_component('home', 'footer') ?>
 <!--FOOTER-->
-<div id="contenedor"><?php include_component('page', 'contenido',array('contenido'=>$contenido))?>
+<div id="contenedor"><?php include_component('page', 'contenido',array('contenido'=>$contenido)) //Prod?>
 </div>
 
 </div>

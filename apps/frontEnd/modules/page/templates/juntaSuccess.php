@@ -8,7 +8,7 @@
 <!--FOOTER-->
 <div id="contenedor">
 <div id="title"><?php echo __('Junta Directiva')?></div>
-<div id="texto"><?php include_component('page', 'tabla',array('contenido'=>$contenido))?>
+<div id="texto"><?php include_component('page', 'tabla',array('contenido'=>$contenido)) //Prod?>
 </div>
 </div>
 </div>
