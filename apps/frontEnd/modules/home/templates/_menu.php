@@ -1,10 +1,10 @@
 <nav id="menu">
 <ul>
-	<li style="background-color: #017a57"><?php echo link_to('¿Qué es <strong>ALPZA</strong>?','page/Alpza')?>
+	<li style="background-color: #017a57"><?php echo link_to('¿Qué es <strong>ALPZA</strong>?','page/alpza')?>
 		<ul class="alpza"
 			style="background-color: #017a57; border-left: 0px !important;">
 
-			<?php echo link_to('<li>Misión Visión</li>','page/Misionvision')?>
+			<?php echo link_to('<li>Misión Visión</li>','page/misionvision')?>
 
 			<a href="#">
 				<li>Junta Directiva</li> </a>
